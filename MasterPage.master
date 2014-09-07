@@ -1,0 +1,184 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'/>
+        <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Caudex' rel='stylesheet' type='text/css'/>
+
+    <title>VETNET</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head> 
+
+
+<body">
+    <form id="form1" runat="server">
+
+
+
+        <div id="cabeza">
+         <div>
+                Hoje e <% OutputDay(); %>
+         </div>
+            <div>
+                            <asp:LoginName FormatString="Bienvenido, {0}." runat="server" /> 
+                            Desligar-se <asp:LoginStatus ID="sair" runat="server" LogoutText="Sair"/>
+
+            </div>
+
+                    <asp:Image ID="imgR1" runat="server" visible="false" src="/img/boton.png"  height="20px" width="20px"/>
+                    <asp:Literal ID="textR1" visible="false" runat="server" > Peticion Pendiente</asp:Literal>
+                    
+                    <asp:Image ID="imgV" runat="server" visible="false" src="/img/veterinario.jpg"  height="20px" width="20px"/>
+                    <asp:Literal ID="textV" visible="false" runat="server" > Estas registrado como Veterinario. </asp:Literal>
+
+                    <asp:Image ID="imgC" runat="server" visible="false" src="/img/cliente.jpg"  height="20px" width="20px"/>
+                    <asp:Literal ID="textC" visible="false" runat="server" > Estas registrado como Cliente. </asp:Literal>
+
+
+             <br/>   
+
+            <div id="logo">
+
+                <h1> VETNET </h1>
+
+            </div>
+        
+        </div>
+
+
+
+         <div id="menu"   style="margin:auto">
+           
+             
+<div id="Menu1" visible="false" runat="server">
+
+<ul class="mi-menu">
+  <li><a href="../inicio/Inicio.aspx"> Inicio </a></li>
+  <li><a href="../control/Login.aspx"> Login </a></li>
+  <li><a href="../control/Registro.aspx"> Registro </a></li>
+</ul>
+
+</div>
+
+              
+
+
+
+
+<div id="Menu2" visible="false" runat="server">
+
+<ul class="mi-menu">
+  <li><a href="../inicio/Inicio.aspx"> Inicio </a></li>
+
+  <li><a href="../control/perfil.aspx"> Perfil </a></li>
+</ul>
+
+</div>
+
+
+
+
+
+
+<div id="Menu3" visible="false" runat="server">
+
+<ul class="mi-menu">
+  <li><a href="../inicio/Inicio.aspx"> Inicio </a></li>
+
+<li><a href="#"> Consultas </a>
+<ul>
+      <li><a href="../consultas/conHistorialesVet.aspx"> Historiales </a></li>
+
+      <li><a href="../consultas/conPeticionVet.aspx">Peticiones </a></li>
+      <li><a href="../consultas/conCitaVet.aspx">Citas </a></li>
+      <li><a href="../consultas/conAnimalesVet.aspx"> Animales </a></li>
+      <li><a href="../consultas/conVeterinarios.aspx">Veterinarios </a></li>
+      <li><a href="../consultas/conLocales.aspx">Locales </a></li>
+</ul>
+</li>
+
+<li><a href="#"> Registros </a>
+<ul>
+      <li><a href="../registros/regHistorial.aspx">Historiales </a></li>
+      <li><a href="../registros/regLocal.aspx">Locales </a></li>
+      
+</ul>
+</li>
+
+
+<li><a href="../control/perfil.aspx"> Perfil </a></li>
+</ul>
+
+</div>
+
+
+
+             
+<div id="Menu4" visible="false" runat="server">
+
+<ul class="mi-menu">
+  <li><a href="../inicio/Inicio.aspx"> Inicio </a></li>
+
+<li><a href="#"> Consultas </a>
+<ul>
+      <li><a href="../consultas/conPeticionCli.aspx">Peticiones </a></li>
+      <li><a href="../consultas/conCitaCli.aspx">Citas </a></li>
+      <li><a href="../consultas/conAnimalesCli.aspx"> Animales </a></li>
+      <li><a href="../consultas/conHistoriales.aspx"> Historiales</a></li>
+
+      <li><a href="../consultas/conVeterinarios.aspx">Veterinarios </a></li>
+      <li><a href="../consultas/conLocales.aspx">Locales </a></li>
+</ul>
+</li>
+
+<li><a href="#"> Registros </a>
+<ul>
+      <li><a href="../registros/regAnimal.aspx">Animal </a></li>
+      <li><a href="../registros/regPeticion.aspx">Peticion </a></li>
+      <li><a href="../registros/regCita.aspx">Cita </a></li>
+
+
+      
+</ul>
+</li>
+
+
+<li><a href="../control/perfil.aspx"> Perfil </a></li>
+</ul>
+
+</div>
+
+
+
+
+
+
+        </div>
+
+
+    <div ID="cuerpo">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+    <div id="pie">
+    </div>
+
+
+
+    </form>
+</body>
+</html>
